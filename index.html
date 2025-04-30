@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DVS: Dynamic Virtual-Real Simulation Platform for Mobile Robotic Tasks</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DVS: Dynamic Virtual-Real Simulation Platform for Mobile Robotic Tasks</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/anthony-cheang">Zijie Zheng</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/lzes">Zeshun Li</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/thuszlien">Yunpeng Wang</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/binicey">Qinghongbing Xie</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jackyzengl.github.io/">Long Zeng</a><sup></sup><sup>1†</sup>.
+            </span>
+            </span>
+          </div>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Tsinghua University</span>
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+            <span class="author-block"><sup>†</sup>Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2504.18944"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body"><div class="vsc-controller"></div>
+      <img id="teaser" src="./static/images/overview.png" alt="DVS Platform Overview" width="100%">
+      <h2 class="subtitle has-text-centered">
+        Overview of DVS Platform
+      </h2>
+      <p>
+        DVS offers a variety of large-scale indoor scene types and dynamic element plugins on the left, enabling users to construct dynamic environments. In the middle, the platform supports various data types that can be generated, such as RGB, depth, and semantic labels. On the right, the data created using this platform can be applied to train robots for tasks such as navigation, trajectory prediction, and grasping. Through a virtual-real fusion feedback mechanism, the platform allows bidirectional mapping of the states of real and virtual agents, enriching the research scenarios.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            With the development of Embodied AI, robotic research has increasingly focused on complex tasks.
+            Existing simulation platforms, however, are often limited to idealized environments, simple task scenarios and lack data interoperability.
+            This restricts task decomposition and multi-task learning. Additionally, current Simulation Platforms face challenges in dynamic pedestrian modeling,
+            scene editability, and synchronization between virtual and real assets. These limitations hinder real-world robot deployment and feedback.
+            To address these challenges, we propose DVS (Dynamic Virtual-Real Simulation Platform), a platform for dynamic virtual-real synchronization in mobile robotic tasks. DVS integrates a random pedestrian behavior modeling plugin and large-scale, customizable indoor scenes for generating annotated training datasets. It features a optical motion capture system, synchronizing object poses and coordinates between virtual and real worlds to support dynamic task benchmarking. Experimental validation shows that DVS supports tasks such as pedestrian trajectory prediction, robot path planning, and robotic arm  grasping, with potential for both simulation and real-world deployment. In this way, DVS represents more than just a versatile robotic platform; it paves the way for research in human intervention in robot execution tasks and real-time feedback algorithms in virtual-real fusion environments.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <div class="content has-text-centered">
+            <video id="replay-video"
+                   controls
+                   muted
+                   preload
+                   playsinline
+                   width="100%">
+              <source src="./static/videos/intro.mp4"
+                      type="video/mp4">
+            </video>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section video-showcase">
+  <div class="container is-fluid">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Use Cases of DVS Platform</h2>
+        <p class="subtitle">Explore different applications of our platform in robotic tasks</p>
+      </div>
+    </div>
+    
+    <!-- Single row horizontal scrolling video carousel -->
+    <div class="horizontal-scroll-carousel">
+      <div class="horizontal-scroll-container">
+        <!-- Video item 1 -->
+        <div class="horizontal-scroll-item">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <video autoplay controls muted loop playsinline class="has-ratio">
+                  <source src="./static/videos/rgb-perception.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">RGB Perception</p>
+              <p class="subtitle is-6">The RGB perception from the first view of robot</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Video item 2 -->
+        <div class="horizontal-scroll-item">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <video autoplay controls muted loop playsinline class="has-ratio">
+                  <source src="./static/videos/segment-perception.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Segment Perception</p>
+              <p class="subtitle is-6">The Segment perception from the first view of robot</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Video item 3 -->
+        <div class="horizontal-scroll-item">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <video autoplay controls muted loop playsinline class="has-ratio">
+                  <source src="./static/videos/social-nav.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Social Navigation</p>
+              <p class="subtitle is-6">Robot avoids pedestrians to navigate</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Video item 4 -->
+        <div class="horizontal-scroll-item">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <video autoplay controls muted loop playsinline class="has-ratio">
+                  <source src="./static/videos/vr-interaction.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">VR Interation</p>
+              <p class="subtitle is-6">Edit the virtual scen via VR headset</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Video item 5 -->
+        <div class="horizontal-scroll-item">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <video autoplay controls muted loop playsinline class="has-ratio">
+                  <source src="./static/videos/virtual-grasp.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Training Data Collection</p>
+              <p class="subtitle is-6">Parallel virtual-real fusion data</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Video item 6 -->
+        <div class="horizontal-scroll-item">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <video autoplay controls muted loop playsinline class="has-ratio">
+                  <source src="./static/videos/virtual-real-grasp.mp4" type="video/mp4">
+                </video>
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Real Robot Deployed</p>
+              <p class="subtitle is-6">Real2Sim2Real training and real time deployment and monitoring</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Optional scroll indicators/buttons -->
+      <div class="scroll-controls">
+        <button class="scroll-left-btn" title="Previous"><i class="fas fa-chevron-left"></i></button>
+        <button class="scroll-right-btn" title="Next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+    
+    <div class="columns is-centered mt-5">
+      <div class="column is-half has-text-centered">
+        <p class="content">
+          These demonstrations showcase different applications of the DVS platform in various robotic tasks. 
+          The platform enables realistic simulation and training for robots in dynamic environments.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="has-text-centered mb-5">
+          <h2 class="title is-3">Experiment</h2>
+        </div>
+        
+        <div class="experiment-showcase">
+          <!-- Experiment slideshow container -->
+          <div class="experiment-slides">
+            <!-- Result image 1 -->
+            <div class="experiment-slide">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img class="fixed-height-img" src="./static/images/exp-fusionfinetune.png" alt="Virtual-Real Fusion Data VLA Finetune">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title is-5">Virtual-Real Fusion Finetune VLA Model</p>
+                  <p class="subtitle is-6">Performance comparison of virtual and virtua-real fusion data</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Result image 2 -->
+            <div class="experiment-slide">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img class="fixed-height-img" src="./static/images/exp-navigation.png" alt="Navigation Experiment">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title is-5">Indoor Navigation</p>
+                  <p class="subtitle is-6">Comparison of navigation performance in different scenes</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Result image 3 -->
+            <div class="experiment-slide">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img class="fixed-height-img" src="./static/images/exp-traj-pred.png" alt="Trajectory Prediction Experiment">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title is-5">Trajectory Prediction Experiment</p>
+                  <p class="subtitle is-6">Performance of trajectory prediction models in dynamic environments</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation dots -->
+          <div class="experiment-nav-dots">
+            <span class="experiment-dot active" onclick="showExperiment(0)"></span>
+            <span class="experiment-dot" onclick="showExperiment(1)"></span>
+            <span class="experiment-dot" onclick="showExperiment(2)"></span>
+          </div>
+          
+          <!-- Prev/Next buttons -->
+          <div class="experiment-nav-buttons">
+            <button class="experiment-prev" onclick="changeExperiment(-1)">&#10094;</button>
+            <button class="experiment-next" onclick="changeExperiment(1)">&#10095;</button>
+          </div>
+        </div>
+        
+        <div class="content has-text-centered mt-4">
+          <p>
+            Our experiments validate the effectiveness of DVS in various robotic tasks, demonstrating improved performance in real-world deployments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experiment-showcase {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .experiment-slide {
+    display: none;
+  }
+  
+  .experiment-nav-dots {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .experiment-dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .experiment-dot.active, .experiment-dot:hover {
+    background-color: #717171;
+  }
+  
+  .experiment-nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  
+  .experiment-prev, .experiment-next {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    pointer-events: auto;
+  }
+  
+  .experiment-prev:hover, .experiment-next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+</style>
+
+<script>
+  // Initialize experiment slideshow
+  let experimentIndex = 0;
+  
+  // Show experiment slides on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    showExperiment(experimentIndex);
+  });
+  
+  function showExperiment(index) {
+    const slides = document.getElementsByClassName("experiment-slide");
+    const dots = document.getElementsByClassName("experiment-dot");
+    
+    if (index >= slides.length) {
+      experimentIndex = 0;
+    } else if (index < 0) {
+      experimentIndex = slides.length - 1;
+    } else {
+      experimentIndex = index;
+    }
+    
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    // Show current slide
+    slides[experimentIndex].style.display = "block";
+    dots[experimentIndex].className += " active";
+  }
+  
+  function changeExperiment(step) {
+    showExperiment(experimentIndex + step);
+  }
+</script>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @misc{zheng2025demonstratingdvsdynamicvirtualreal,
+        title={Demonstrating DVS: Dynamic Virtual-Real Simulation Platform for Mobile Robotic Tasks}, 
+        author={Zijie Zheng and Zeshun Li and Yunpeng Wang and Qinghongbing Xie and Long Zeng},
+        year={2025},
+        eprint={2504.18944},
+        archivePrefix={arXiv},
+        primaryClass={cs.RO},
+        url={https://arxiv.org/abs/2504.18944}, 
+  }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <center>
+            Website source code based on <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a> project.
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
